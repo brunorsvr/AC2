@@ -1,10 +1,11 @@
+package src;
 import java.util.Scanner;
 
 public class Aula6 {
 
     public static void main(String[] args) {
         //inicialização de variáveis
-        double mediaFinal, ac1, ac2, ag, af, notaMinima = 0.0;
+        double mediaFinal = 0.0, ac1 = 0.0, ac2 = 0.0, ag = 0.0, af = 0.0, notaMinima = 0.0;
         
 
 
