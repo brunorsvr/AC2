@@ -1,11 +1,12 @@
 package src;
 import java.util.Scanner;
 
-public class Aula6 {
+public class Aula7 {
 
     public static void main(String[] args) {
         //inicialização de variáveis
-        double mediaFinal = 0.0, ac1 = 0.0, ac2 = 0.0, ag = 0.0, af = 0.0, notaMinima = 0.0;
+        double mediaFinal, ac1, ac2, ag, af = 0.0;
+        String mediaFormatada = "";
         
 
 
@@ -27,33 +28,26 @@ public class Aula6 {
         
         //Execução do método para calcular a média final do aluno
         mediaFinal = calculoMedia(ac1, ac2, ag, af);
-        //Pede e recebe a nota mínima
-        System.out.println("Digite a nota mínima necessária: ");
-        notaMinima = scanner.nextDouble();
+        mediaFormatada = String.format("%.2f", mediaFinal);
 
-        //Exibe a média final do aluno
-        //System.out.println("A média final desse aluno é "+ mediaFinal); 
+        //Operaçao logica e exibição da situação do aluno
+        if (mediaFinal <= 2.0) {
 
+            System.out.println("O aluno está reprovado. \nMédia do aluno: " + mediaFormatada);
+
+         }
+            else if (mediaFinal > 2.0 && mediaFinal < 5.0){
+            System.out.println("O aluno precisa fazer a prova substitutiva. \nMédia do aluno: " + mediaFormatada);
+         }
+            else{
+            System.out.println("O aluno está aprovado. \nMédia do aluno: " + mediaFormatada);
+         }
         //Fecha o scanner
         scanner.close();
-
-        if (ac1 < notaMinima) {
-            System.out.println("AC1 está abaixo da nota mínima("+notaMinima+"): " + ac1);
-        }
-        if (ac2 < notaMinima) {
-            System.out.println("AC2 está abaixo da nota mínima("+notaMinima+"): " + ac2);
-        }
-        if (ag < notaMinima) {
-            System.out.println("AG está abaixo da nota mínima("+notaMinima+"): " + ag);
-        }
-        if (af < notaMinima) {
-            System.out.println("AF está abaixo da nota mínima("+notaMinima+"): " + af);
-        }else{System.out.println("A média final desse aluno é "+ mediaFinal); 
-
         }
 
 
-    }
+    
     
 
     //Criação do método para calcular a média

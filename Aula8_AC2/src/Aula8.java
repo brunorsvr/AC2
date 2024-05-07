@@ -6,7 +6,8 @@ public class Aula8 {
     public static void main(String[] args) {
         //inicialização de variáveis
         int quantidadeNotas = 0;
-        double mediaNotas = 0.0, valorNota = 0.0, pesoTotal = 0.0, pesoNota = 0.0;
+        double mediaFinal = 0.0, valorNota = 0.0, pesoTotal = 0.0, pesoNota = 0.0;
+        String mediaFormatada = "";
         
         
 
@@ -25,19 +26,21 @@ public class Aula8 {
             pesoNota = scanner.nextDouble();
 
             pesoTotal += pesoNota;
-            mediaNotas += (valorNota * (pesoNota /100)); 
+            mediaFinal += (valorNota * (pesoNota /100));
+            mediaFormatada = String.format("%.2f", mediaFinal); 
             
 
             if(pesoTotal > 100){
                 System.out.println("O peso das notas ultrapassa 100%, comece de novo");
                 i = -1;
-                mediaNotas = 0;
+                mediaFinal = 0;
                 pesoTotal = 0;
+                mediaFormatada = "";
                 continue;
             }
             
         }
-        System.out.println("A média das notas é:" + mediaNotas);
+        System.out.println("A média das notas é:" + mediaFormatada);
         if (mediaFinal <= 2.0) {
 
             System.out.println("O aluno está reprovado.");

@@ -1,11 +1,12 @@
 package src;
 import java.util.Scanner;
 
-public class Aula7 {
+public class Aula6 {
 
     public static void main(String[] args) {
         //inicialização de variáveis
-        double mediaFinal, ac1, ac2, ag, af, notaMinima = 0.0;
+        double mediaFinal = 0.0, ac1 = 0.0, ac2 = 0.0, ag = 0.0, af = 0.0, notaMinima = 0.0;
+        String mediaFormatada = "";
         
 
 
@@ -27,46 +28,23 @@ public class Aula7 {
         
         //Execução do método para calcular a média final do aluno
         mediaFinal = calculoMedia(ac1, ac2, ag, af);
+
+        mediaFormatada = String.format("%.2f", mediaFinal);
+
         //Pede e recebe a nota mínima
         System.out.println("Digite a nota mínima necessária: ");
         notaMinima = scanner.nextDouble();
 
-        //Exibe a média final do aluno
-        //System.out.println("A média final desse aluno é "+ mediaFinal); 
+        
 
         //Fecha o scanner
         scanner.close();
+        //exibe media final e situacao
+        if (mediaFinal  < notaMinima) {
+            System.out.println("Aluno reprovado. \nA média está abaixo da nota mínima("+notaMinima+"): " + mediaFormatada);
+        }else{System.out.println("Aluno aprovado. \nMédia do aluno: " + mediaFormatada); 
 
-        if (ac1 < notaMinima) {
-            System.out.println("AC1 está abaixo da nota mínima("+notaMinima+"): " + ac1);
         }
-        if (ac2 < notaMinima) {
-            System.out.println("AC2 está abaixo da nota mínima("+notaMinima+"): " + ac2);
-        }
-        if (ag < notaMinima) {
-            System.out.println("AG está abaixo da nota mínima("+notaMinima+"): " + ag);
-        }
-        if (af < notaMinima) {
-            System.out.println("AF está abaixo da nota mínima("+notaMinima+"): " + af);
-        }
-        else{
-            System.out.println("A média final desse aluno é "+ mediaFinal); 
-        
-
-            if (mediaFinal <= 2.0) {
-
-            System.out.println("O aluno está reprovado.");
-
-         }
-            else if (mediaFinal > 2.0 && mediaFinal < 5.0){
-            System.out.println("O aluno precisa fazer a prova substitutiva.");
-         }
-            else{
-            System.out.println("O aluno está aprovado.");
-         }
-        }
-
-        
 
 
     }
