@@ -1,3 +1,5 @@
+//Aluno: Bruno Rodrigues da Silveira
+//RA: 249543
 import java.util.Scanner;
 
 public class Aula10 {
